@@ -5,7 +5,6 @@ const del = require('del');
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const loadPlugin = require('gulp-load-plugins')();
-const pug = require('gulp-pug');
 const sassGlob = require('gulp-sass-glob');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
@@ -113,17 +112,8 @@ gulp.task('styles', () => {
         .pipe(browserSync.stream());
 });
 
-gulp.task('pug', () => {
-    return gulp.src(`${config.sourcePath}/templates/pages/*.pug`)
-        .pipe(pug({
-            pretty: true,
-        }))
-        .on('error', loadPlugin.notify.onError((error) => {
-            return {
-                title: 'Pug',
-                message: error.message,
-            }
-        }))
+gulp.task('pages', () => {
+    return gulp.src(`${config.sourcePath}/*.html`)
         .pipe(gulp.dest(config.distPath));
 });
 
@@ -161,7 +151,7 @@ gulp.task('scripts', gulp.series(
 gulp.task('watch', () => {
     gulp.watch(`${config.sourcePath}/assets/images/**/*.*`, gulp.series('images'));
     gulp.watch(`${config.sourcePath}/assets/svg/**/*.svg`, gulp.series('svgSprite'));
-    gulp.watch(`${config.sourcePath}/templates/**/*.pug`, gulp.series('pug'));
+    gulp.watch(`${config.sourcePath}/**/*.html`, gulp.series('pages'));
     gulp.watch(`${config.sourcePath}/styles/**/*.scss`, gulp.series('styles'));
     gulp.watch(`${config.sourcePath}/js/**/*.js`, gulp.series('scripts:serve'));
 });
@@ -189,7 +179,7 @@ gulp.task('development', gulp.series('clean',
         'images',
         'svgSprite',
         'externalStyles',
-        'pug',
+        'pages',
         'styles',
         'scripts:serve',
     ),
@@ -206,7 +196,7 @@ gulp.task('build', gulp.series('clean',
         'images',
         'svgSprite',
         'externalStyles',
-        'pug',
+        'pages',
         'styles',
         'scripts',
     ),
