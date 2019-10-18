@@ -18,8 +18,10 @@ For building project to production run ```gulp build``` command
 
 ## Branches
 
-The project contains * branches.
+The project contains 3 branches.
 
-Master branch is clean.
+master branch is clean.
 
-Develop branch is default pug based project blank, without any javascript frameworks, supports last language features.
+develop branch is default pug based project blank, without any javascript frameworks, supports last language features.
+
+html-based-blank branch is same as default, but this branch based on html.
