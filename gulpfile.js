@@ -43,11 +43,6 @@ gulp.task('fonts', () => {
         .pipe(gulp.dest(`${config.distPath}/assets/fonts`));
 });
 
-gulp.task('json', () => {
-    return gulp.src(`${config.sourcePath}/json/**/*.json`, { since: gulp.lastRun('json') })
-        .pipe(gulp.dest(`${config.distPath}/json`));
-});
-
 gulp.task('images', () => {
     return gulp.src(
         `${config.sourcePath}/assets/images/**/*.*`,
@@ -194,7 +189,6 @@ gulp.task('development', gulp.series('clean',
     gulp.parallel(
         'fonts',
         'files',
-        'json',
         'images',
         'svgSprite',
         'externalStyles',
@@ -212,7 +206,6 @@ gulp.task('build', gulp.series('clean',
     gulp.parallel(
         'fonts',
         'files',
-        'json',
         'images',
         'svgSprite',
         'externalStyles',
