@@ -1,6 +1,6 @@
-const path = require('path');
+import path from 'path';
 
-module.exports = {
+const webpackConfig = {
     entry: {
         main: "./source/js/index.js",
     },
@@ -31,3 +31,5 @@ module.exports = {
         },
     },
 };
+
+export default webpackConfig;

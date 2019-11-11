@@ -1,0 +1,55 @@
+{
+    "assets": {
+        "files": "./source/assets/files/**/*.*",
+        "fonts": "./source/assets/fonts/**/*.*",
+
+
+
+        "src": "./source/assets/**/*",
+        "dst": "./dist/assets"
+    },
+    "distPath": "./dist",
+    "jsPath": "./source/js/**/*.js",
+    "pluginsConfigs": {
+        "cleanCss": {
+            "compatibility": "ie8"
+        }
+    },
+    "pugPaths": {
+        "content": "./source/pugContent.json",
+        "templates": "./source/templates/pages/*.pug"
+    },
+    "sourcePath": "./source",
+    "stylesPaths": {
+        "externalCss": [
+            "./node_modules/normalize.css/normalize.css"
+        ],
+        "stylesBundle": [
+            "./source/styles/bundle.scss"
+        ]
+    },
+    "targetPaths": {
+        "scripts": "./dist/js",
+        "styles": "./dist/css"
+    },
+
+
+
+    "js": {
+        "eslintPaths": [
+            "./source/**/*.js",
+            "./source/**/*.jsx"
+        ]
+    },
+    "ts": {
+        "tslintPaths": [
+            "./source/**/*.ts",
+            "./source/**/*.tsx",
+            "!./source/**/*.spec.ts",
+            "!./source/**/*.spec.tsx"
+        ],
+        "tsconfigPath": "./tsconfig.json"
+    },
+    "indexHtmlPath": "./source/index.html"
+  }
+  
