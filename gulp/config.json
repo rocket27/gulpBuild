@@ -1,12 +1,7 @@
 {
     "assets": {
         "files": "./source/assets/files/**/*.*",
-        "fonts": "./source/assets/fonts/**/*.*",
-
-
-
-        "src": "./source/assets/**/*",
-        "dst": "./dist/assets"
+        "fonts": "./source/assets/fonts/**/*.*"
     },
     "distPath": "./dist",
     "jsPath": "./source/js/**/*.js",
@@ -31,25 +26,6 @@
     "targetPaths": {
         "scripts": "./dist/js",
         "styles": "./dist/css"
-    },
-
-
-
-    "js": {
-        "eslintPaths": [
-            "./source/**/*.js",
-            "./source/**/*.jsx"
-        ]
-    },
-    "ts": {
-        "tslintPaths": [
-            "./source/**/*.ts",
-            "./source/**/*.tsx",
-            "!./source/**/*.spec.ts",
-            "!./source/**/*.spec.tsx"
-        ],
-        "tsconfigPath": "./tsconfig.json"
-    },
-    "indexHtmlPath": "./source/index.html"
+    }
   }
   

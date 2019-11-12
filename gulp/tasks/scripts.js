@@ -11,54 +11,26 @@ const webpackSettings = webpackConfig;
 const { argv } = yargs;
 const production = !!argv.production;
 
+const js = () => gulp.src(config.jsPath)
+    .pipe(webpackStream(webpackSettings), webpack)
+    .pipe(gulp.dest(config.targetPaths.scripts))
+    .on('end', browserSyncInstance.reload);
+
 const setMode = (env = production) => {
+    console.log(env);
     webpackSettings.mode = env ? 'production' : 'development';
     webpackSettings.devtool = env ? false : 'source-map';
     webpackSettings.optimization = {
         minimize: env,
     };
-    console.log(webpackSettings);
+
+    // console.log(production);
+
+    return gulp.series(jslint, js);
 };
 
-// const js = () => gulp.src(config.jsPath)
-//     .pipe(webpackStream(webpackSettings), webpack)
-//     .pipe(gulp.dest(config.targetPaths.scripts))
-//     .on('end', browserSyncInstance.reload);
-const js = () => {
-    console.log('js');
+const scriptsServe = () => setMode();
 
-    return gulp.src(config.jsPath)
-        .pipe(webpackStream(webpackSettings), webpack)
-        .pipe(gulp.dest(config.targetPaths.scripts))
-        .on('end', browserSyncInstance.reload);
-};
-
-const scriptsServe = (cb) => {
-    setMode();
-
-    gulp.series(
-        // (callback) => {
-        //     setMode();
-        //     callback();
-        // },
-        jslint,
-        js,
-    );
-
-    cb();
-};
-
-const scripts = (cb) => {
-    gulp.series(
-        (callback) => {
-            setMode(true);
-            callback();
-        },
-        jslint,
-        js,
-    );
-
-    cb();
-};
+const scripts = () => setMode(true);
 
 export { scriptsServe, scripts };

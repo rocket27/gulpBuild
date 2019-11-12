@@ -1,4 +1,5 @@
 import path from 'path';
+import config from './gulp/config';
 
 const webpackConfig = {
     entry: {
@@ -6,7 +7,7 @@ const webpackConfig = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, config.distPath),
     },
     module: {
         rules: [
@@ -27,7 +28,7 @@ const webpackConfig = {
     resolve: {
         extensions: ['*', '.js'],
         alias: {
-            source: path.resolve(__dirname, 'source/'),
+            source: path.resolve(__dirname, config.sourcePath),
         },
     },
 };

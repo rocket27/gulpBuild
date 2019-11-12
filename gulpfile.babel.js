@@ -83,7 +83,7 @@ gulp.task('development', gulp.series(
         externalStyles,
         pages,
         styles,
-        scriptsServe,
+        scriptsServe(),
     ),
     gulp.parallel(
         watch,
@@ -101,9 +101,9 @@ gulp.task('build', gulp.series(
         externalStyles,
         pages,
         styles,
-        scripts,
+        scripts(),
     ),
     // gulp.series('addVersions'),
 ));
-gulp.task('t', gulp.series(scriptsServe));
+gulp.task('t', gulp.series(scriptsServe()));
 gulp.task('default', gulp.series('development'));
