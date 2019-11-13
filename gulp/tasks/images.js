@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import imagemin from 'gulp-imagemin';
 import config from '../config';
 
-const images = () => gulp.src(config.globPaths.images, { since: gulp.lastRun(images) })
+const images = () => gulp.src(config.globPaths.images)
     .pipe(imagemin([
         imagemin.gifsicle({ interlaced: true }),
         imagemin.jpegtran({ progressive: true }),

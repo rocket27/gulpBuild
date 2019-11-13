@@ -5,6 +5,8 @@
     },
     "distPath": "./dist",
     "globPaths": {
+        "files": "./source/assets/files/**/*.*",
+        "fonts": "./source/assets/fonts/**/*.*",
         "images": "./source/assets/images/**/*.*",
         "scripts": "./source/js/**/*.js",
         "styles": "./source/styles/**/*.scss",
