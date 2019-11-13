@@ -1,24 +1,24 @@
 import cleanCss from 'gulp-clean-css';
 import gulp from 'gulp';
-import loadPlugin from 'gulp-load-plugins';
 import sassGlob from 'gulp-sass-glob';
+import loadPluginInstance from '../service/loadPluginInstance';
 import config from '../config';
 import browserSyncInstance from '../service/browserSyncInstance';
 
 const styles = () => gulp.src(config.stylesPaths.stylesBundle)
-    .pipe(loadPlugin()
+    .pipe(loadPluginInstance
         .sourcemaps.init())
     .pipe(sassGlob())
-    .pipe(loadPlugin()
+    .pipe(loadPluginInstance
         .sass())
-    .on('error', loadPlugin().notify.onError((error) => ({
+    .on('error', loadPluginInstance.notify.onError((error) => ({
         title: 'Styles',
         message: error.message,
     })))
-    .pipe(loadPlugin()
+    .pipe(loadPluginInstance
         .autoprefixer({ cascade: false }))
     .pipe(cleanCss(config.pluginsConfigs.cleanCss))
-    .pipe(loadPlugin().sourcemaps.write())
+    .pipe(loadPluginInstance.sourcemaps.write())
     .pipe(gulp.dest(config.targetPaths.styles))
     .pipe(browserSyncInstance.stream());
 

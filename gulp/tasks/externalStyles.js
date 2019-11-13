@@ -4,7 +4,7 @@ import gulp from 'gulp';
 import config from '../config';
 
 const externalStyles = () => gulp.src(config.stylesPaths.externalCss)
-    .pipe(cleanCss({ compatibility: 'ie8' }))
+    .pipe(cleanCss(config.pluginsConfigs.cleanCss))
     .pipe(concat('external.css'))
     .pipe(gulp.dest(config.targetPaths.styles));
 

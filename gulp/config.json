@@ -4,6 +4,13 @@
         "fonts": "./source/assets/fonts/**/*.*"
     },
     "distPath": "./dist",
+    "globPaths": {
+        "images": "./source/assets/images/**/*.*",
+        "scripts": "./source/js/**/*.js",
+        "styles": "./source/styles/**/*.scss",
+        "svg": "./source/assets/svg/**/*.svg",
+        "templates": "./source/templates/**/*.pug"
+    },
     "jsPath": "./source/js/**/*.js",
     "pluginsConfigs": {
         "cleanCss": {
@@ -24,6 +31,7 @@
         ]
     },
     "targetPaths": {
+        "images": "./dist/assets/images",
         "scripts": "./dist/js",
         "styles": "./dist/css"
     }
