@@ -5,7 +5,7 @@ import files from './gulp/tasks/files';
 import externalStyles from './gulp/tasks/externalStyles';
 import pages from './gulp/tasks/pug';
 import styles from './gulp/tasks/styles';
-import { scripts, scriptsServe } from './gulp/tasks/scripts';
+import { scriptsServe, scripts } from './gulp/tasks/scripts';
 import watch from './gulp/tasks/watch';
 import serve from './gulp/tasks/serve';
 import addVersions from './gulp/tasks/addVersions';
@@ -44,7 +44,5 @@ gulp.task('build', gulp.series(
     ),
     gulp.series(addVersions),
 ));
-
-gulp.task('t', gulp.series(scriptsServe()));
 
 gulp.task('default', gulp.series('development'));
