@@ -3,7 +3,7 @@ import webpackStream from 'webpack-stream';
 import gulp from 'gulp';
 import yargs from 'yargs';
 import config from '../config';
-import jslint from './eslint';
+import eslint from './eslint';
 import webpackConfig from '../../webpack.config';
 import browserSyncInstance from '../service/browserSyncInstance';
 
@@ -29,7 +29,7 @@ const scriptsServe = () => gulp.series(
         setMode();
         cb();
     },
-    jslint,
+    eslint,
     js,
 );
 
@@ -38,7 +38,7 @@ const scripts = () => gulp.series(
         setMode(true);
         cb();
     },
-    jslint,
+    eslint,
     js,
 );
 

@@ -1,9 +1,9 @@
-import eslint from 'gulp-eslint';
+import gulpEslint from 'gulp-eslint';
 import gulp from 'gulp';
 import config from '../config';
 
-const jslint = () => gulp.src(config.globPaths.scripts)
-    .pipe(eslint())
-    .pipe(eslint.format());
+const eslint = () => gulp.src(config.globPaths.scripts)
+    .pipe(gulpEslint())
+    .pipe(gulpEslint.format());
 
-export default jslint;
+export default eslint;

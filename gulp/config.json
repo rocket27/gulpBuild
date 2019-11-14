@@ -1,8 +1,4 @@
 {
-    "assets": {
-        "files": "./source/assets/files/**/*.*",
-        "fonts": "./source/assets/fonts/**/*.*"
-    },
     "distPath": "./dist",
     "globPaths": {
         "files": "./source/assets/files/**/*.*",
@@ -13,7 +9,6 @@
         "svg": "./source/assets/svg/**/*.svg",
         "templates": "./source/templates/**/*.pug"
     },
-    "jsPath": "./source/js/**/*.js",
     "pluginsConfigs": {
         "cleanCss": {
             "compatibility": "ie8"
@@ -33,9 +28,11 @@
         ]
     },
     "targetPaths": {
+        "files": "./dist/assets/files",
+        "fonts": "./dist/assets/fonts",
         "images": "./dist/assets/images",
         "scripts": "./dist/js",
         "styles": "./dist/css"
     }
-  }
+}
   
