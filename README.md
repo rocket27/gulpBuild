@@ -6,9 +6,9 @@
 
 2. ```cd path/to/...```
 
-3. ```yarn global add gulp-cli```
+3. ```yarn global add gulp-cli``` or ```npm install gulp-cli -g```
 
-4. ```yarn```
+4. ```yarn``` or ```npm install```
 
 ## Usage
 
