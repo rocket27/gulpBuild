@@ -1,12 +1,13 @@
-const path = require('path');
+import path from 'path';
+import config from './gulp/config';
 
-module.exports = {
+const webpackConfig = {
     entry: {
         main: "./source/js/index.js",
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, config.distPath),
     },
     module: {
         rules: [
@@ -27,7 +28,9 @@ module.exports = {
     resolve: {
         extensions: ['*', '.js'],
         alias: {
-            source: path.resolve(__dirname, 'source/'),
+            source: path.resolve(__dirname, config.sourcePath),
         },
     },
 };
+
+export default webpackConfig;

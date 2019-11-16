@@ -1,0 +1,34 @@
+{
+    "distPath": "./dist",
+    "globPaths": {
+        "files": "./source/assets/files/**/*.*",
+        "fonts": "./source/assets/fonts/**/*.*",
+        "images": "./source/assets/images/**/*.*",
+        "pages": "./source/*.html",
+        "scripts": "./source/js/**/*.js",
+        "styles": "./source/styles/**/*.scss",
+        "svg": "./source/assets/svg/**/*.svg"
+    },
+    "pluginsConfigs": {
+        "cleanCss": {
+            "compatibility": "ie8"
+        }
+    },
+    "sourcePath": "./source",
+    "stylesPaths": {
+        "externalCss": [
+            "./node_modules/normalize.css/normalize.css"
+        ],
+        "stylesBundle": [
+            "./source/styles/bundle.scss"
+        ]
+    },
+    "targetPaths": {
+        "files": "./dist/assets/files",
+        "fonts": "./dist/assets/fonts",
+        "images": "./dist/assets/images",
+        "scripts": "./dist/js",
+        "styles": "./dist/css"
+    }
+}
+  
