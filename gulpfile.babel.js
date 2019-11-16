@@ -3,7 +3,7 @@ import clean from './gulp/tasks/clean';
 import fonts from './gulp/tasks/fonts';
 import files from './gulp/tasks/files';
 import externalStyles from './gulp/tasks/externalStyles';
-import pages from './gulp/tasks/pug';
+import pages from './gulp/tasks/pages';
 import styles from './gulp/tasks/styles';
 import { scriptsServe, scripts } from './gulp/tasks/scripts';
 import watch from './gulp/tasks/watch';

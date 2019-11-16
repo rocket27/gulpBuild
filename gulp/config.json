@@ -4,19 +4,15 @@
         "files": "./source/assets/files/**/*.*",
         "fonts": "./source/assets/fonts/**/*.*",
         "images": "./source/assets/images/**/*.*",
+        "pages": "./source/*.html",
         "scripts": "./source/js/**/*.js",
         "styles": "./source/styles/**/*.scss",
-        "svg": "./source/assets/svg/**/*.svg",
-        "templates": "./source/templates/**/*.pug"
+        "svg": "./source/assets/svg/**/*.svg"
     },
     "pluginsConfigs": {
         "cleanCss": {
             "compatibility": "ie8"
         }
-    },
-    "pugPaths": {
-        "content": "./source/pugContent.json",
-        "templates": "./source/templates/pages/*.pug"
     },
     "sourcePath": "./source",
     "stylesPaths": {
